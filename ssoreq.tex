@@ -78,13 +78,13 @@ The large sample sizes are important to support statistical conclusions on subgr
 
 \subsubsection{Additional Requirements}
 
-These completeness limits result in large samples which are important for finding rare or unusual objects. When considering these rare or unusual objects, it is also a high priority that this completeness must not have any bias towards or against particular orbital parameters, and in particular, no `blind spots' in finding unusual objects on unexpected orbits. Examples include objects on retrograde orbits (see TNO 2008 $KV_{42}$), objects on highly inclined orbits (see TNO 2004 $XR_{190}$),  objects on highly eccentric orbits (such as new comets or incoming Oort Cloud objects like 2006 $SQ_{372}$), or unusual resonant objects (such as natural Earth satellites or sun-grazing NEOs such as 2004 $LG$).  This also includes discovering objects on orbits interior to Earth's appearing with solar elongation angles greater than 45 degrees (those with semi-major axis larger that that of Venus). 
+These completeness limits result in large samples which are important for finding rare or unusual objects.
 
-Given the minimum telescop elevation angle of 20 degrees, Figure~\ref{fig:minang} shows that the 
-above requirement is possible. An example of orbit within Earth's orbit that is discoverable in
-baseline LSST survey simulation (opsim3.61) is shown in Figure~\ref{fig:volume}. 
+When considering these, it is understood that a completely unbiased sample, in orbital elements space, is difficult to obtain. Nevertheless, care will be taken that the LSST system (either through the choice of cadence, software, or otherwise) does not strongly bias towards or against particular orbital parameters. In particular, the LSST shall minimize (optimally, have no) `blind spots' for finding unusual objects on unexpected orbits.
 
+Examples include objects on retrograde orbits (see TNO 2008 $KV_{42}$), objects on highly inclined orbits (see TNO 2004 $XR_{190}$),  objects on highly eccentric orbits (such as new comets or incoming Oort Cloud objects like 2006 $SQ_{372}$), or unusual resonant objects (such as natural Earth satellites or sun-grazing NEOs such as 2004 $LG$).  This also includes discovering objects on orbits interior to Earth's appearing with solar elongation angles greater than 45 degrees (those with semi-major axis larger that that of Venus). 
 
+Given the minimum telescop elevation angle of 20 degrees, Figure~\ref{fig:minang} shows that the above considerations are possible to satisfy given current baseline design. An example of orbit within Earth's orbit that is discoverable in baseline LSST survey simulation (opsim3.61) is shown in Figure~\ref{fig:volume}.
 
 \subsection{SSO completeness characterization}
 
@@ -92,14 +92,20 @@ Understanding the completeness functions and being able to characterize these pr
 
 However, as completeness also depends on the $H$ and orbital distributions assumed in the model distribution of objects, for some work these general completeness functions must be supplemented by more detailed simulations, such as when attempting to characterize the distribution of libration amplitudes of resonant populations. To support these requirements, LSST will also provide access to the information and tools necessary for collaboration members to generate their own completeness functions for subpopulations generated from their own models. 
 
+\subsection{Performance Considerations}
 
+The requirements set forth in this document pertain to end-of-survey performance. That is, the completeness levels of Table~\ref{SSOcompleteness} do not have to be reached until the end of the 10 year survey. In particular, the probability of finding an object at any given apparition is allowed to be (potentially significantly) smaller than $C_b$.
+
+No further requirements are imposed on timeliness of identification of sources as Solar System objects and their linkage to orbits. Formally, the catalog of orbits is considered a Level 2 data product, computed and distributed as part of annual data releases. Other considerations -- the desire to distinguish between Solar System objects and other types of transients -- make more frequent linking and orbit determination desirable. Current LSST/DM design assumes this to occur daily, on average.
+
+Notwithstanding the above, the LSST {\em is} required to detect and alert on significantly trailed (fast moving) objects. The latency requirement is the same as for other Level 1 transient alerts (60 seconds).
 
 \begin{figure}[h!]
 \epsscale{0.85}
 \vskip -1.3in
 \plotone{fig1.eps}
 %\includegraphics{fig1.eps}
-\vskip -1.0in
+%\vskip -1.0in
 \caption{Figure 5.2 from the LSST Science Book: {\it A comparison of LSST discovery efficiency for dominant 
 populations of Solar System bodies. Solid lines correspond to 
 classical TNOs (red), Jovian Trojans (magenta), Main Belt Asteroids
